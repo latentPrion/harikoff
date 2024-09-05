@@ -2,18 +2,16 @@
 #define _MIND_H
 
 #include <thought.h>
+#include <subconscious.h>
 
 class Mind
 {
 public:
-	void Mind::wander(void)
+	void wander(void)
 	{
-		for (;;)
-		{
-			Thought		idleThought(subconscious);
+		Thought		idleThought(subconscious);
 
-			idleThought.walk(mind);
-		}
+		idleThought.walk();
 	}
 
 public:
