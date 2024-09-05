@@ -1,2 +1,4 @@
-bin_PROGRAMS = harikoff
-harikoff_SOURCES = core/main.cpp
+#AM_CPPFLAGS=-I$(srcdir)/include -I$(srcdir)/core/include
+
+SUBDIRS = core
+
