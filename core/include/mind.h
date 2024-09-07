@@ -1,21 +1,32 @@
 #ifndef _MIND_H
 #define _MIND_H
 
+#include <cstdlib>
+#include <memory>
+
 #include <thought.h>
-#include <subconscious.h>
+#include <concept.h>
+#include <attentionGrabber.h>
 
 class Mind
 {
 public:
-	void wander(void)
+	AttentionGrabber poll(void);
+	void focusOn(std::shared_ptr<Thought> thought)
 	{
-		Thought		idleThought(subconscious);
-
-		idleThought.walk();
+		currentThought = thought;
 	}
 
+	void execute(void)
+		{};
+
+	bool recognizes(AttentionTrigger intrin)
+		{ return !!(std::rand() / 2); };
+
 public:
-	Subconscious	subconscious;
+	std::shared_ptr<Thought>	currentThought;
+	Concept				Desirables,
+					Undesirables;
 };
 
 #endif

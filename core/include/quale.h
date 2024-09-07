@@ -2,6 +2,7 @@
 #define _QUALE_H
 
 #include <cstdint>
+#include <attentionTrigger.h>
 
 class Quale
 {
@@ -27,7 +28,7 @@ class NeutralQuale
 };
 
 class NonNeutralQuale
-: public Quale
+: public Quale, public AttentionTrigger
 {
 public:
 	virtual void eventInd(void);

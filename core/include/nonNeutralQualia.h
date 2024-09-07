@@ -3,7 +3,7 @@
 
 #include <quale.h>
 
-class PleasantQuale
+class PleasurableQuale
 : public NonNeutralQuale
 {
 public:
