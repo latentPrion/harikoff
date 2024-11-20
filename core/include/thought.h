@@ -4,21 +4,14 @@
 #include <iostream>
 #include <scene.h>
 #include <attentionGrabber.h>
-
+#include <goal.h>
 
 class Thought
 {
 public:
-	enum class Goal
-	{
-		DRIFT,
-		ASSOCIATE_CAUSAL_QUALE_WITH_INTRINSIC_MOTIVATORS,
-		RESPOND_TO_CAUSAL_QUALE
-	};
-
 	Thought(void)
 	{
-		setGoal(Goal::DRIFT);
+		setGoal(thought::Goal::DRIFT);
 	}
 
 public:
@@ -31,12 +24,12 @@ public:
 	};
 
 	void step(void) { std::cout <<"Step\n"; }
-	void setGoal(Goal g)
+	void setGoal(thought::Goal g)
 		{ goal = g; }
 
 public:
 	Scene		scene;
-	Goal		goal;
+	thought::Goal	goal;
 };
 
 class ActiveThought
@@ -46,7 +39,8 @@ public:
 	ActiveThought(AttentionGrabber ag)
 	: currFocus(ag)
 	{
-		setGoal(Goal::ASSOCIATE_CAUSAL_QUALE_WITH_INTRINSIC_MOTIVATORS);
+		setGoal(thought::Goal
+			::ASSOCIATE_CAUSAL_QUALE_WITH_INTRINSIC_MOTIVATORS);
 	}
 
 public:
@@ -60,5 +54,7 @@ public:
 	IdleThought(void)
 	{}
 };
+
+
 
 #endif

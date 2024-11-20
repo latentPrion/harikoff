@@ -21,12 +21,12 @@ int main(int argc, char **argv)
 
 			auto urgentThought = std::make_shared<ActiveThought>(currentEmergency);
 
-			if (mind.recognizes(currentEmergency.cause)) {
-				goal = Thought::Goal
+			if (!mind.recognizes(currentEmergency.cause)) {
+				goal = thought::Goal
 					::ASSOCIATE_CAUSAL_QUALE_WITH_INTRINSIC_MOTIVATORS;
 			}
 			else {
-				goal = Thought::Goal
+				goal = thought::Goal
 					::RESPOND_TO_CAUSAL_QUALE;
 			}
 

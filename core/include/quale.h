@@ -32,6 +32,9 @@ class NonNeutralQuale
 {
 public:
 	virtual void eventInd(void);
+
+public:
+	BodyCoords	bodyCoords;
 };
 
 #endif
