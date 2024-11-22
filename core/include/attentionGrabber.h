@@ -9,16 +9,17 @@ class AttentionGrabber
 {
 public:
 	AttentionGrabber(AttentionTrigger cause, Chronomenon chron)
-	: isNull(false)
-	{}
+		: isNull(false)
+	{
+	}
 
 	void setNull(void) { isNull = true; }
 	int operator!(void) { return isNull; }
 
 public:
-	AttentionTrigger	cause;
-	Chronomenon		chron;
-	bool			isNull;
+	AttentionTrigger cause;
+	Chronomenon chron;
+	bool isNull;
 };
 
 #endif

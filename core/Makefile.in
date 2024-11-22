@@ -99,7 +99,8 @@ CONFIG_CLEAN_FILES =
 CONFIG_CLEAN_VPATH_FILES =
 am__installdirs = "$(DESTDIR)$(bindir)"
 PROGRAMS = $(bin_PROGRAMS)
-am_harikoff_OBJECTS = harikoff-main.$(OBJEXT)
+am_harikoff_OBJECTS = harikoff-main.$(OBJEXT) \
+	harikoff-painfulQuale.$(OBJEXT) harikoff-mind.$(OBJEXT)
 harikoff_OBJECTS = $(am_harikoff_OBJECTS)
 harikoff_LDADD = $(LDADD)
 AM_V_P = $(am__v_P_@AM_V@)
@@ -117,7 +118,9 @@ am__v_at_1 =
 DEFAULT_INCLUDES = -I.@am__isrc@ -I$(top_builddir)
 depcomp = $(SHELL) $(top_srcdir)/build-aux/depcomp
 am__maybe_remake_depfiles = depfiles
-am__depfiles_remade = ./$(DEPDIR)/harikoff-main.Po
+am__depfiles_remade = ./$(DEPDIR)/harikoff-main.Po \
+	./$(DEPDIR)/harikoff-mind.Po \
+	./$(DEPDIR)/harikoff-painfulQuale.Po
 am__mv = mv -f
 AM_V_lt = $(am__v_lt_@AM_V@)
 am__v_lt_ = $(am__v_lt_@AM_DEFAULT_V@)
@@ -241,6 +244,7 @@ localedir = @localedir@
 localstatedir = @localstatedir@
 mandir = @mandir@
 mkdir_p = @mkdir_p@
+num_sensors = @num_sensors@
 oldincludedir = @oldincludedir@
 pdfdir = @pdfdir@
 prefix = @prefix@
@@ -255,7 +259,7 @@ target_alias = @target_alias@
 top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
-harikoff_SOURCES = main.cpp
+harikoff_SOURCES = main.cpp painfulQuale.cpp mind.cpp
 harikoff_CPPFLAGS = -I$(top_srcdir)/include -I$(top_srcdir)/core/include
 all: all-am
 
@@ -344,6 +348,8 @@ distclean-compile:
 	-rm -f *.tab.c
 
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/harikoff-main.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/harikoff-mind.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/harikoff-painfulQuale.Po@am__quote@ # am--include-marker
 
 $(am__depfiles_remade):
 	@$(MKDIR_P) $(@D)
@@ -378,6 +384,34 @@ harikoff-main.obj: main.cpp
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='main.cpp' object='harikoff-main.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(harikoff_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o harikoff-main.obj `if test -f 'main.cpp'; then $(CYGPATH_W) 'main.cpp'; else $(CYGPATH_W) '$(srcdir)/main.cpp'; fi`
+
+harikoff-painfulQuale.o: painfulQuale.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(harikoff_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT harikoff-painfulQuale.o -MD -MP -MF $(DEPDIR)/harikoff-painfulQuale.Tpo -c -o harikoff-painfulQuale.o `test -f 'painfulQuale.cpp' || echo '$(srcdir)/'`painfulQuale.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/harikoff-painfulQuale.Tpo $(DEPDIR)/harikoff-painfulQuale.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='painfulQuale.cpp' object='harikoff-painfulQuale.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(harikoff_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o harikoff-painfulQuale.o `test -f 'painfulQuale.cpp' || echo '$(srcdir)/'`painfulQuale.cpp
+
+harikoff-painfulQuale.obj: painfulQuale.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(harikoff_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT harikoff-painfulQuale.obj -MD -MP -MF $(DEPDIR)/harikoff-painfulQuale.Tpo -c -o harikoff-painfulQuale.obj `if test -f 'painfulQuale.cpp'; then $(CYGPATH_W) 'painfulQuale.cpp'; else $(CYGPATH_W) '$(srcdir)/painfulQuale.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/harikoff-painfulQuale.Tpo $(DEPDIR)/harikoff-painfulQuale.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='painfulQuale.cpp' object='harikoff-painfulQuale.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(harikoff_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o harikoff-painfulQuale.obj `if test -f 'painfulQuale.cpp'; then $(CYGPATH_W) 'painfulQuale.cpp'; else $(CYGPATH_W) '$(srcdir)/painfulQuale.cpp'; fi`
+
+harikoff-mind.o: mind.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(harikoff_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT harikoff-mind.o -MD -MP -MF $(DEPDIR)/harikoff-mind.Tpo -c -o harikoff-mind.o `test -f 'mind.cpp' || echo '$(srcdir)/'`mind.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/harikoff-mind.Tpo $(DEPDIR)/harikoff-mind.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='mind.cpp' object='harikoff-mind.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(harikoff_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o harikoff-mind.o `test -f 'mind.cpp' || echo '$(srcdir)/'`mind.cpp
+
+harikoff-mind.obj: mind.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(harikoff_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT harikoff-mind.obj -MD -MP -MF $(DEPDIR)/harikoff-mind.Tpo -c -o harikoff-mind.obj `if test -f 'mind.cpp'; then $(CYGPATH_W) 'mind.cpp'; else $(CYGPATH_W) '$(srcdir)/mind.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/harikoff-mind.Tpo $(DEPDIR)/harikoff-mind.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='mind.cpp' object='harikoff-mind.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(harikoff_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o harikoff-mind.obj `if test -f 'mind.cpp'; then $(CYGPATH_W) 'mind.cpp'; else $(CYGPATH_W) '$(srcdir)/mind.cpp'; fi`
 
 ID: $(am__tagged_files)
 	$(am__define_uniq_tagged_files); mkid -fID $$unique
@@ -506,6 +540,8 @@ clean-am: clean-binPROGRAMS clean-generic mostlyclean-am
 
 distclean: distclean-am
 		-rm -f ./$(DEPDIR)/harikoff-main.Po
+	-rm -f ./$(DEPDIR)/harikoff-mind.Po
+	-rm -f ./$(DEPDIR)/harikoff-painfulQuale.Po
 	-rm -f Makefile
 distclean-am: clean-am distclean-compile distclean-generic \
 	distclean-tags
@@ -552,6 +588,8 @@ installcheck-am:
 
 maintainer-clean: maintainer-clean-am
 		-rm -f ./$(DEPDIR)/harikoff-main.Po
+	-rm -f ./$(DEPDIR)/harikoff-mind.Po
+	-rm -f ./$(DEPDIR)/harikoff-painfulQuale.Po
 	-rm -f Makefile
 maintainer-clean-am: distclean-am maintainer-clean-generic
 
